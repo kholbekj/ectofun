@@ -11,6 +11,7 @@ defmodule Ectofun.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    resources "/posts", PostController, except: [:new, :edit]
   end
 
   scope "/", Ectofun do
